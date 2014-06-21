@@ -76,6 +76,15 @@ package alx.common.test
       return !bTest;
     }
     /**
+     * Checks that this method not called.
+     * @param strTitle String
+     * @return Boolean
+     */
+    public function notHere( strTitle:String):Boolean
+    {
+      return this.isFalse( strTitle, true);
+    }
+    /**
      * Checks value is equal to expected value.
      * @param strTitle String
      * @param anyTestValue Object
