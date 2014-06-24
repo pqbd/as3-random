@@ -18,14 +18,14 @@ package alx.common.test
      * @param strLabel String
      */
     public function CUnitTest( strLabel:String):void
-    {  
+    {
       this.m_tester = CUnitTests.createTester( strLabel);
       this.startTest();
       this.endTest()
       if (( CUnitTests.isMode( CUnitTests.EXTENDED_MODE)) || ( this.m_tester.isError()))
         CUnitTests.printLine( this.m_tester.successLine());
     }
-    
+
     /**
      * Gets list of functions to run.
      * @return Array of Function
@@ -49,9 +49,9 @@ package alx.common.test
         }
         catch ( e:Error)
         {
-          CUnitTests.printLine( e.getStackTrace());
+          this.getTester().error( e.getStackTrace());
         }
-        
+
         if ( this.getTester().isError())
         {
           bNext = false;
@@ -61,7 +61,7 @@ package alx.common.test
           }
           catch ( e:Error)
           {
-            CUnitTests.printLine( e.getStackTrace());
+            this.getTester().error( e.getStackTrace());
           }
         }
         else
@@ -84,6 +84,6 @@ package alx.common.test
       return this.m_tester;
     }
 
-    
+
   }
 }
